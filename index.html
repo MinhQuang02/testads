@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <title>Matrix Input</title>
 
+<!-- ===== Google AdSense verification ===== -->
+<script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1438698901636636"
+    crossorigin="anonymous"></script>
+
 <style>
 :root {
     --cell: 80px;
@@ -17,14 +22,23 @@
 
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     background: var(--bg);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     font-family: system-ui, Arial, sans-serif;
 }
 
+/* ===== ADS ===== */
+.ad-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* ===== APP ===== */
 .app {
     background: white;
     padding: 30px;
@@ -128,6 +142,20 @@ button:disabled {
 </head>
 
 <body>
+
+<!-- ===== TOP ADS ===== -->
+<div class="ad-container">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1438698901636636"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
 <div class="app">
 
 <!-- LEFT -->
@@ -267,7 +295,7 @@ clearBtn.onclick = () => {
     });
 };
 
-/* ===== RANDOM SMALL (5 numbers) ===== */
+/* ===== RANDOM SMALL ===== */
 randomSmallBtn.onclick = () => {
     const cells = document.querySelectorAll(".small-cell");
     const nums = Array.from({ length: 5 }, () =>
@@ -280,7 +308,7 @@ randomSmallBtn.onclick = () => {
     });
 };
 
-/* ===== RANDOM MATRIX (6 numbers, random positions) ===== */
+/* ===== RANDOM MATRIX ===== */
 randomMatrixBtn.onclick = () => {
     const cells = Array.from(document.querySelectorAll(".cell"));
 
@@ -289,7 +317,7 @@ randomMatrixBtn.onclick = () => {
         [cells[i], cells[j]] = [cells[j], cells[i]];
     }
 
-    const nums = Array.from({ length: 3}, () =>
+    const nums = Array.from({ length: 3 }, () =>
         Math.floor(Math.random() * 9) + 1
     );
 
@@ -299,5 +327,6 @@ randomMatrixBtn.onclick = () => {
     }
 };
 </script>
+
 </body>
 </html>
